@@ -1,1 +1,19 @@
 <h1><%= @title %></h1>
+
+<h2>Submit a Rumor</h2>
+<form action="/rumors" method="post">
+  <textarea name="rumor[body]" id="rumor_body" cols="50" rows="5"></textarea><br />
+  <label for="rumor_submitter">Submitted by:</label>
+  <input type="text" name="rumor[submitter]" id="rumor_submitter" placeholder="Anonymous"></input><br />
+  <button type="submit">Submit Rumor</button>
+</form>
+
+<h2>Recent Rumors</h2>
+<% @rumors.each do |rumor| %>
+  <%= rumor.created_at %><br />
+  <%= rumor.body %><br />
+  <%= rumor.submitter %><br />
+  <hr>
+<% end %>
+
+<%= will_paginate @rumors %>

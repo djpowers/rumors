@@ -1,5 +1,12 @@
 require 'sinatra'
 require 'sinatra/activerecord'
+require 'sinatra/flash'
+require 'sinatra/redirect_with_flash'
+require 'will_paginate'
+require 'will_paginate/active_record'
+require 'pry'
+
+enable :sessions
 
 configure do
   set :views, 'app/views'
@@ -9,7 +16,22 @@ Dir[File.join(File.dirname(__FILE__), 'app', '**', '*.rb')].each do |file|
   require file
 end
 
+class Rumor < ActiveRecord::Base
+  validates :body, presence: true, length: { minimum: 5 }
+  validates :submitter, length: { minimum: 2 }, allow_blank: true
+end
+
 get '/' do
-  @title = "Hello World"
+  @title = "Pat Kelly Rumors"
+  @rumors = Rumor.order("created_at DESC").paginate(page: params[:page], per_page: 25)
   erb :index
+end
+
+post '/rumors' do
+  @rumor = Rumor.new(params[:rumor])
+  if @rumor.save
+    redirect '/', notice: 'Thanks for sharing the juicy gossip!'
+  else
+    redirect '/', error: 'Something went wrong. Try again.'
+  end
 end
