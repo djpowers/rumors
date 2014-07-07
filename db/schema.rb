@@ -17,8 +17,9 @@ ActiveRecord::Schema.define(version: 20140706171613) do
   enable_extension "plpgsql"
 
   create_table "rumors", force: true do |t|
-    t.text     "body",       null: false
+    t.text     "body",                 null: false
     t.string   "submitter"
+    t.integer  "tweet_id",   limit: 8
     t.datetime "created_at"
     t.datetime "updated_at"
   end
