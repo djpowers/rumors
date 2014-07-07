@@ -5,6 +5,7 @@
   <textarea name="rumor[body]" id="rumor_body" cols="50" rows="5"></textarea><br />
   <label for="rumor_submitter">Submitted by:</label>
   <input type="text" name="rumor[submitter]" id="rumor_submitter" placeholder="Anonymous"></input><br />
+  <%= csrf_tag %>
   <button type="submit">Submit Rumor</button>
 </form>
 

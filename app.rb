@@ -1,20 +1,23 @@
 require 'sinatra'
 require 'sinatra/activerecord'
+require 'rack/csrf'
 require 'sinatra/flash'
 require 'sinatra/redirect_with_flash'
 require 'will_paginate'
 require 'will_paginate/active_record'
 require 'pry'
 require 'dotenv'
-Dotenv.load
-
-enable :sessions
-set :session_secret, ENV['SESSION_KEY']
-
-I18n.enforce_available_locales = false
 
 configure do
   set :views, 'app/views'
+
+  Dotenv.load
+
+  enable :sessions
+  set :session_secret, ENV['SESSION_KEY']
+  use Rack::Csrf, raise: true
+
+  I18n.enforce_available_locales = false
 end
 
 Dir[File.join(File.dirname(__FILE__), 'app', '**', '*.rb')].each do |file|
@@ -24,6 +27,16 @@ end
 class Rumor < ActiveRecord::Base
   validates :body, presence: true, length: { minimum: 5 }
   validates :submitter, length: { minimum: 2 }, allow_blank: true
+end
+
+helpers do
+  def csrf_token
+    Rack::Csrf.csrf_token(env)
+  end
+
+  def csrf_tag
+    Rack::Csrf.csrf_tag(env)
+  end
 end
 
 get '/' do
