@@ -15,4 +15,5 @@ group :test, :development do
   gem 'capybara'
   gem 'tux'
   gem 'shotgun'
+  gem 'dotenv'
 end

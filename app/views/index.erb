@@ -10,7 +10,7 @@
 
 <h2>Recent Rumors</h2>
 <% @rumors.each do |rumor| %>
-  <%= rumor.created_at %><br />
+  <%= rumor.created_at.in_time_zone('US/Eastern').strftime('%b %e, %Y %I:%M %p') %><br />
   <%= rumor.body %><br />
   <%= rumor.submitter %><br />
   <hr>

@@ -5,8 +5,13 @@ require 'sinatra/redirect_with_flash'
 require 'will_paginate'
 require 'will_paginate/active_record'
 require 'pry'
+require 'dotenv'
+Dotenv.load
 
 enable :sessions
+set :session_secret, ENV['SESSION_KEY']
+
+I18n.enforce_available_locales = false
 
 configure do
   set :views, 'app/views'
