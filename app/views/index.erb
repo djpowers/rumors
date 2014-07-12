@@ -1,10 +1,11 @@
 <link href="<%= url('stylesheets/digg_pagination.css') %>" rel="stylesheet" type="text/css">
 
 <h1><%= @title %></h1>
+<i class="fa fa-glass"></i>
+<h4 class="tagline">Get all the juice... <br><span>in concentrated form</span></h4>
 
-<h2>Submit a Rumor</h2>
 <form action="/rumors" method="post">
-  <textarea name="rumor[body]" id="rumor_body" cols="50" rows="5"></textarea><br />
+  <textarea name="rumor[body]" id="rumor_body" cols="50" rows="5" placeholder="Submit a Rumor"></textarea><br />
   <label for="rumor_submitter">Submitted by:</label>
   <input type="text" name="rumor[submitter]" id="rumor_submitter" placeholder="Anonymous"><br />
   <%= csrf_tag %>
