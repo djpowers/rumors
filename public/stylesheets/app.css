@@ -2,6 +2,35 @@ body {
   background-image: url('/img/frenchstucco/frenchstucco.png');
 }
 
+h1 {
+  font-family: 'Lobster', cursive;
+}
+
+h3 {
+  font-family: 'Lobster', cursive;
+}
+
+.flash {
+  font-family: 'Lobster', cursive;
+}
+
 .tagline span {
   font-style: italic;
+}
+
+.fa-glass {
+  display: inline;
+  margin-right: 10px;
+}
+
+.tagline {
+  display: inline;
+}
+
+.anonymous {
+  font-style: italic;
+}
+
+.submitted {
+  font-weight: bold;
 }

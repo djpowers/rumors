@@ -2,7 +2,7 @@
 
 <h1><%= @title %></h1>
 <i class="fa fa-glass"></i>
-<h4 class="tagline">Get all the juice... <br><span>in concentrated form</span></h4>
+<h3 class="tagline">Get all the juice... <br><span>in concentrated form</span></h3>
 
 <form action="/rumors" method="post">
   <textarea name="rumor[body]" id="rumor_body" cols="50" rows="5" placeholder="Submit a Rumor"></textarea><br />
@@ -12,11 +12,15 @@
   <button type="submit">Submit Rumor</button>
 </form>
 
-<h2>Recent Rumors</h2>
+<h3>Recent Rumors</h3>
 <% @rumors.each do |rumor| %>
   <%= rumor.created_at.in_time_zone('US/Eastern').strftime('%b %e, %Y %I:%M %p') %><br />
-  <%= rumor.body %><br />
-  <%= rumor.submitter %><br />
+  "<%= rumor.body %>"<br />
+  <% if rumor.submitter? %>
+    <span class="submitted">Submitted by:</span> <%= rumor.submitter %><br />
+  <% else %>
+    <span class="submitted">Submitted by:</span><span class="anonymous"> Anonymous</span>
+  <% end %>
   <hr>
 <% end %>
 
