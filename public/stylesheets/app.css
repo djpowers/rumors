@@ -1,13 +1,39 @@
-body {
+/* centered columns styles */
+.row-centered {
+  text-align:center;
+}
+.col-centered {
+  display:inline-block;
+  float:none;
+  /* reset the text-align */
+  text-align:left;
+  /* inline-block space fix */
+  margin-right:-4px;
+}
+
+.wrapper {
   background-image: url('/img/frenchstucco/frenchstucco.png');
+}
+
+.content {
+  background-color: rgba(255, 193, 235, 0.25);
 }
 
 h1 {
   font-family: 'Lobster', cursive;
+  padding: 10px;
 }
 
 h3 {
   font-family: 'Lobster', cursive;
+}
+
+form {
+  padding: 20px;
+}
+
+.btn {
+  margin: 10px;
 }
 
 .flash {

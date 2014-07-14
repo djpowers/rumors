@@ -1,27 +1,57 @@
 <link href="<%= url('stylesheets/digg_pagination.css') %>" rel="stylesheet" type="text/css">
 
-<h1><%= @title %></h1>
-<i class="fa fa-glass"></i>
-<h3 class="tagline">Get all the juice... <br><span>in concentrated form</span></h3>
+<div class="row row-centered">
+  <div class="col-centered">
+    <h1><%= @title %></h1>
+  </div>
+</div>
 
-<form action="/rumors" method="post">
-  <textarea name="rumor[body]" id="rumor_body" cols="50" rows="5" placeholder="Submit a Rumor"></textarea><br />
-  <label for="rumor_submitter">Submitted by:</label>
-  <input type="text" name="rumor[submitter]" id="rumor_submitter" placeholder="Anonymous"><br />
-  <%= csrf_tag %>
-  <button type="submit">Submit Rumor</button>
-</form>
+<div class="row row-centered">
+  <div class="col-centered">
+    <i class="fa fa-glass"></i>
+    <h3 class="tagline">Get all the juice... <br><span>in concentrated form</span></h3>
+  </div>
+</div>
 
-<h3>Recent Rumors</h3>
-<% @rumors.each do |rumor| %>
-  <%= rumor.created_at.in_time_zone('US/Eastern').strftime('%b %e, %Y %I:%M %p') %><br />
-  "<%= rumor.body %>"<br />
-  <% if rumor.submitter? %>
-    <span class="submitted">Submitted by:</span> <%= rumor.submitter %><br />
-  <% else %>
-    <span class="submitted">Submitted by:</span><span class="anonymous"> Anonymous</span>
-  <% end %>
-  <hr>
-<% end %>
+<div class="row row-centered">
+  <div class="col-centered">
+    <form class="" action="/rumors" method="post">
+      <textarea name="rumor[body]" id="rumor_body" cols="50" rows="5" placeholder="Submit a Rumor"></textarea><br />
+      <div class="row row-centered">
+        <div class="col-centered">
+          <label for="rumor_submitter">Submitted by:</label>
+          <input type="text" name="rumor[submitter]" id="rumor_submitter" placeholder="Anonymous"><br />
+        </div>
+      </div>
+      <%= csrf_tag %>
+      <div class="row row-centered">
+        <div class="col-centered">
+          <button type="submit" class="btn btn-primary btn-lg">Submit Rumor</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
 
-<%= will_paginate @rumors %>
+<div class="row row-centered">
+  <div class="col-xs-4 col-centered">
+    <% @rumors.each do |rumor| %>
+      <div class="">
+        "<%= rumor.body %>"<br />
+        <% if rumor.submitter? %>
+          <span class="submitted">Submitted by:</span> <%= rumor.submitter %>
+        <% else %>
+          <span class="submitted">Submitted by:</span><span class="anonymous"> Anonymous</span>
+        <% end %> at
+        <%= rumor.created_at.in_time_zone('US/Eastern').strftime('%I:%M %p %b %e, %Y') %>
+      </div>
+      <hr>
+    <% end %>
+  </div>
+</div>
+
+<div class="row row-centered">
+  <div class="col-centered">
+    <%= will_paginate @rumors %>
+  </div>
+</div>

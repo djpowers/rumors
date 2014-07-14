@@ -14,12 +14,24 @@
     <script src="/javascripts/jquery-2.1.1.min.js"></script>
     <script src="/javascripts/bootstrap.min.js"></script>
   </head>
-  <body class="text-center pagination-centered">
-    <%= styled_flash %>
-    <%= yield %>
+  <body>
+    <div class="wrapper">
+      <div class="content">
+        <div class="row row-centered">
+          <div class="col-centered">
+            <%= styled_flash %>
+          </div>
+        </div>
+        <%= yield %>
+        <br>
+        <div class="row row-centered">
+          <div class="col-centered">
+            <div class="copyright">
+              &copy; <%= Date.today.year %> - Pat Kelly Rumors
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
-  <br>
-  <div class="copyright">
-    &copy; <%= Date.today.year %> - Pat Kelly Rumors
-  </div>
 </html>
