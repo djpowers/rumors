@@ -34,11 +34,13 @@
 </div>
 
 <div class="row row-centered">
-  <div class="col-xs-4 col-centered">
+  <div class="col-md-3 col-sm-5 col-xs-7 col-centered">
     <% @rumors.each do |rumor| %>
       <div class="">
         "<%= rumor.body %>"<br />
-        <% if rumor.submitter? %>
+        <% if rumor.tweet_id? %>
+          <span class="submitted">Submitted by:</span> <a href="https://twitter.com/<%= rumor.submitter %>/status/<%= rumor.tweet_id %>"><%= rumor.submitter %></a>
+        <% elsif rumor.submitter? %>
           <span class="submitted">Submitted by:</span> <%= rumor.submitter %>
         <% else %>
           <span class="submitted">Submitted by:</span><span class="anonymous"> Anonymous</span>
