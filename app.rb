@@ -50,3 +50,7 @@ post '/rumors' do
     redirect '/', error: 'Something went wrong. Try again.'
   end
 end
+
+get '/about' do
+  erb :about
+end

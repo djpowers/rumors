@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="stylesheets/font-awesome.min.css
     ">
     <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href="<%= url('stylesheets/digg_pagination.css') %>" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="stylesheets/app.css" />
     <script src="/javascripts/jquery-2.1.1.min.js"></script>
     <script src="/javascripts/bootstrap.min.js"></script>
@@ -22,6 +23,16 @@
             <%= styled_flash %>
           </div>
         </div>
+        <nav class="navbar navbar-default" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="/">PK Rumors</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-5">
+              <p class="navbar-text navbar-right"><a href="/about" class="navbar-link">About</a></p>
+            </div>
+          </div>
+        </nav>
         <%= yield %>
         <br>
         <div class="row row-centered">
