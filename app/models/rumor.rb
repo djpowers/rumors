@@ -1,6 +1,5 @@
 class Rumor < ActiveRecord::Base
-  validates :body, presence: true, length: { minimum: 5 }
-  validates :submitter, length: { minimum: 2 }, allow_blank: true
+  validates :body, presence: true, length: { minimum: 10 }
 
   @client = Twitter::REST::Client.new do |config|
     config.consumer_key = ENV['YOUR_CONSUMER_KEY']
