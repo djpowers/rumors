@@ -12,6 +12,10 @@ body {
   background-color: rgba(255, 193, 235, 0.25);
 }
 
+ul {
+  margin-right: 20px;
+}
+
 /* centered columns styles */
 .row-centered {
   text-align:center;

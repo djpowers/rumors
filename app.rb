@@ -52,5 +52,6 @@ post '/rumors' do
 end
 
 get '/about' do
+  @percentage = (rand * 100).round(2)
   erb :about
 end
