@@ -5,9 +5,12 @@ require 'sinatra/flash'
 require 'sinatra/redirect_with_flash'
 require 'will_paginate'
 require 'will_paginate/active_record'
-require 'pry'
-require 'dotenv'
 require 'twitter'
+
+configure :development do
+  require 'pry'
+  require 'dotenv'
+end
 
 configure do
   set :views, 'app/views'
