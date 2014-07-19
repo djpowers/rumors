@@ -10,12 +10,12 @@ require 'twitter'
 configure :development do
   require 'pry'
   require 'dotenv'
+
+  Dotenv.load
 end
 
 configure do
   set :views, 'app/views'
-
-  Dotenv.load
 
   enable :sessions
   set :session_secret, ENV['SESSION_KEY']
