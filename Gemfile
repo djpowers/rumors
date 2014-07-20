@@ -11,6 +11,7 @@ gem 'sinatra-redirect-with-flash'
 gem 'will_paginate'
 gem 'twitter'
 gem 'unicorn'
+gem 'newrelic_rpm'
 
 group :test, :development do
   gem 'pry'
