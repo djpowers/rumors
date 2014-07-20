@@ -14,11 +14,10 @@
 <div class="row row-centered">
   <div class="col-centered">
     <form class="" action="/rumors" method="post" data-parsley-validate>
-      <textarea name="rumor[body]" data-parsley-trigger="change" required data-parsley-minlength="10" data-parsley-error-message="Your rumor must be at least 10 characters long, please!" id="rumor_body" cols="40" rows="5" placeholder="Submit a rumor" autofocus="autofocus"></textarea><br />
+      <textarea name="rumor[body]" data-parsley-trigger="change" required data-parsley-minlength="10" data-parsley-error-message="Your rumor must be at least 10 characters long, please!" id="rumor_body" cols="35" rows="5" placeholder="Submit a rumor" autofocus="autofocus"></textarea><br />
       <div class="row row-centered">
         <div class="col-centered">
-          <label for="rumor_submitter">Submitted by:</label>
-          <input type="text" name="rumor[submitter]" id="rumor_submitter" placeholder="Anonymous"><br />
+          <input type="text" name="rumor[submitter]" id="rumor_submitter" placeholder="Name (optional)"><br />
         </div>
       </div>
       <%= csrf_tag %>
