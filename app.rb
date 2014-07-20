@@ -6,13 +6,16 @@ require 'sinatra/redirect_with_flash'
 require 'will_paginate'
 require 'will_paginate/active_record'
 require 'twitter'
-require 'newrelic_rpm'
 
 configure :development do
   require 'pry'
   require 'dotenv'
 
   Dotenv.load
+end
+
+configure :production do
+  require 'newrelic_rpm'
 end
 
 configure do

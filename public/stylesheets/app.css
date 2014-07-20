@@ -63,6 +63,10 @@ form {
   margin-right: 10px;
 }
 
+.tweet {
+  display: inline;
+}
+
 .tagline {
   display: inline;
 }
