@@ -7,9 +7,10 @@ class Rumor < ActiveRecord::Base
   end
 
   def self.add_twitter_rumors
-    @client.search('#patkellyrumors -rt', result_type: 'recent').take(3).collect do |tweet|
+    @client.search('#patkellyrumors -rt', result_type: 'recent').collect do |tweet|
       Rumor.find_or_create_by(body: tweet.text, submitter: tweet.user.screen_name) do |rumor|
         rumor.tweet_id = tweet.id
+        rumor.created_at = tweet.created_at
       end
     end
   end
