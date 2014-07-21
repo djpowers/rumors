@@ -1,5 +1,6 @@
 html, body {
   overflow-x: hidden;
+  height: 100%;
 }
 
 html {
@@ -15,7 +16,6 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-
 
 ul {
   margin-right: 20px;
