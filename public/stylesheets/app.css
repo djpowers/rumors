@@ -1,6 +1,5 @@
 html, body {
   overflow-x: hidden;
-  height: 100%;
 }
 
 html {
@@ -11,21 +10,15 @@ body {
   background-color: rgba(255, 193, 235, 0.25);
 }
 
-ul {
-  margin-right: 20px;
+.center {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* centered columns styles */
-.row-centered {
-  text-align:center;
-}
-.col-centered {
-  display:inline-block;
-  float:none;
-  /* reset the text-align */
-  text-align:left;
-  /* inline-block space fix */
-  margin-right:-4px;
+
+ul {
+  margin-right: 20px;
 }
 
 h1 {
