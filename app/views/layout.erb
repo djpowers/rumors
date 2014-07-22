@@ -17,7 +17,7 @@
     <script src="/javascripts/bootstrap.min.js"></script>
     <script src="/javascripts/parsley.min.js"></script>
   </head>
-  <body>
+  <body class="Site">
     <div class="row">
       <div class="col text-center">
         <%= styled_flash %>
@@ -44,7 +44,9 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-    <%= yield %>
+    <main class="Site-content">
+      <%= yield %>
+    </main>
     <br>
     <div class="row">
       <div class="col text-center">

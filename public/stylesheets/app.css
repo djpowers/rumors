@@ -10,6 +10,16 @@ body {
   background-color: rgba(255, 193, 235, 0.25);
 }
 
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.Site-content {
+  flex: 1;
+}
+
 .center {
   float: none;
   margin-left: auto;
