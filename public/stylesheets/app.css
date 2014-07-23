@@ -126,6 +126,6 @@ form {
         only screen and (min-resolution: 120dpi)
         {
           html {
-            background-image: url(/img/frenchstucco/frenchstucco_@2x.png);
+            background: url(/img/frenchstucco/frenchstucco_@2X.png);
           }
         }
