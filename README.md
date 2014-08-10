@@ -10,3 +10,5 @@ using [sinatra-activerecord](https://github.com/janko-m/sinatra-activerecord)
 - [Pry](https://github.com/pry/pry) for debugging
 
 To use, ensure Twitter API credentials are set as environment variables.
+
+For using Heroku console, first enter ```require './app.rb'``` per the instructions at [Running a Heroku Console](http://mikeebert.tumblr.com/post/29941784481/running-a-sinatra-console)
