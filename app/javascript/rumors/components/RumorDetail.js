@@ -5,7 +5,7 @@ class RumorDetail extends React.Component {
     return (
       <div>
         <p>{this.props.body}</p>
-        <span>{this.props.submitter}</span>
+        <span>Submitted by {this.props.submitter} at {this.props.posted_time}</span>
       </div>
     );
   }

@@ -31,7 +31,7 @@ class RumorsDisplay extends React.Component {
   render() {
     return (
       <div>
-        {this.state.rumors.map(rumor => <RumorDetail key={rumor.id} body={rumor.body} submitter={rumor.submitter} />)}
+        {this.state.rumors.map(rumor => <RumorDetail key={rumor.id} body={rumor.body} submitter={rumor.submitter} posted_time={rumor.posted_time} />)}
       </div>
     );
   }
