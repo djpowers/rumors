@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import AddRumorForm from './AddRumorForm';
 import RumorDetail from './RumorDetail';
 
 class RumorsDisplay extends React.Component {
@@ -8,6 +9,7 @@ class RumorsDisplay extends React.Component {
     this.state = {
       rumors: [],
     };
+    this.addRumor = this.addRumor.bind(this);
   }
 
   componentDidMount() {
@@ -28,9 +30,37 @@ class RumorsDisplay extends React.Component {
       });
   }
 
+  addRumor(rumorParams) {
+    axios({
+      method: 'POST',
+      url: 'api/rumors',
+      data: rumorParams,
+      headers: {
+        'X-CSRF-Token': document.querySelector('meta[name=csrf-token]').content,
+      },
+    })
+      .then((response) => {
+        const newRumor = { ...response.data.rumor };
+        const rumor = {
+          id: newRumor.id,
+          body: newRumor.body,
+          submitter: newRumor.submitter,
+          posted_time: newRumor.posted_time,
+        };
+
+        const rumors = [...this.state.rumors];
+        rumors.push(rumor);
+        this.setState({ rumors });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   render() {
     return (
       <div>
+        <AddRumorForm addRumor={this.addRumor} />
         {this.state.rumors.map(rumor => <RumorDetail key={rumor.id} body={rumor.body} submitter={rumor.submitter} posted_time={rumor.posted_time} />)}
       </div>
     );
