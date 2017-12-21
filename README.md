@@ -1,24 +1,9 @@
-# README
+# Rumors
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An application built with React and Ruby on Rails (using Webpacker) which accepts posts via web form or Twitter hashtag.
 
-Things you may want to cover:
+Install required dependencies with `yarn install` and `bundle install`.
 
-* Ruby version
+Run the server with `foreman start -f Procfile.dev -p 3000`.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Ensure Twitter API credentials are set as environment variables.
