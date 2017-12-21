@@ -60,6 +60,8 @@ class RumorsDisplay extends React.Component {
   render() {
     return (
       <div>
+        <h1>Pat Kelly Rumors</h1>
+        <p>Get all the juice... in concentrated form. 🍊</p>
         <AddRumorForm addRumor={this.addRumor} />
         {this.state.rumors.map(rumor => <RumorDetail key={rumor.id} body={rumor.body} submitter={rumor.submitter} posted_time={rumor.posted_time} />)}
       </div>
