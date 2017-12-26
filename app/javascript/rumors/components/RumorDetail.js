@@ -6,7 +6,7 @@ class RumorDetail extends React.Component {
       <p className="rumorDetail">
         &quot;{this.props.body}&quot;
         <br />
-        <span className="submitted">Submitted by:</span> {this.props.submitter ? this.props.submitter : <span className="anonymous">Anonymous</span>} at {this.props.posted_time}
+        <span className="submitted">Submitted by:</span> {this.props.submitter ? this.props.submitter : <span className="anonymous">Anonymous</span>} at {this.props.displayTime}
       </p>
     );
   }

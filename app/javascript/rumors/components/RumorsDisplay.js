@@ -45,7 +45,8 @@ class RumorsDisplay extends React.Component {
           id: newRumor.id,
           body: newRumor.body,
           submitter: newRumor.submitter,
-          posted_time: newRumor.posted_time,
+          displayTime: newRumor.displayTime,
+          createdAt: Date.now(),
         };
 
         const rumors = [...this.state.rumors];
@@ -63,7 +64,7 @@ class RumorsDisplay extends React.Component {
         <h1>Pat Kelly Rumors</h1>
         <p>Get all the juice... in concentrated form. 🍊</p>
         <AddRumorForm addRumor={this.addRumor} />
-        {this.state.rumors.map(rumor => <RumorDetail key={rumor.id} body={rumor.body} submitter={rumor.submitter} posted_time={rumor.posted_time} />)}
+        {this.state.rumors.sort((a, b) => b.createdAt - a.createdAt).map(rumor => <RumorDetail key={rumor.id} body={rumor.body} submitter={rumor.submitter} displayTime={rumor.displayTime} />)}
       </div>
     );
   }
