@@ -6,4 +6,13 @@ body {
 textarea {
   margin: 0 auto;
   display: block;
+  margin-bottom: 10px;
+}
+
+.submitted {
+  font-weight: bold;
+}
+
+.anonymous {
+  font-style: italic;
 }
