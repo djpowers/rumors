@@ -5,3 +5,5 @@ json.rumors @rumors do |rumor|
   json.displayTime rumor.created_at.in_time_zone('US/Eastern').strftime('%I:%M %p %b %e, %Y')
   json.createdAt rumor.created_at.to_i
 end
+
+json.totalCount @rumors.total_entries

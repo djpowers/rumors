@@ -10,7 +10,7 @@ const App = props => (
     <div>
       <Route
         path="/"
-        component={RumorsDisplay}
+        render={() => <RumorsDisplay perPage={25} />}
       />
     </div>
   </Router>
