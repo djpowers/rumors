@@ -75,10 +75,22 @@ class RumorsDisplay extends React.Component {
     return (
       <div>
         <h1>Pat Kelly Rumors</h1>
-        <p>Get all the juice... in concentrated form. 🍊</p>
+        <p>
+          Get all the juice... in concentrated form.&nbsp;
+          <span role="img" aria-label="orange">🍊</span>
+        </p>
         <AddRumorForm addRumor={this.addRumor} />
         <p>Or tweet using <strong>#patkellyrumors</strong></p>
-        {this.state.rumors.sort((a, b) => b.createdAt - a.createdAt).map(rumor => <RumorDetail key={rumor.id} body={rumor.body} submitter={rumor.submitter} tweetId={rumor.tweetId} displayTime={rumor.displayTime} />)}
+        {this.state.rumors.sort((a, b) => b.createdAt - a.createdAt)
+            .map(rumor => (
+              <RumorDetail
+                key={rumor.id}
+                body={rumor.body}
+                submitter={rumor.submitter}
+                tweetId={rumor.tweetId}
+                displayTime={rumor.displayTime}
+              />
+            ))}
         <div id="react-paginate">
           <ReactPaginate
             previousLabel="previous"

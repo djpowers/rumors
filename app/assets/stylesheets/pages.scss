@@ -1,4 +1,14 @@
+html, body {
+  overflow-x: hidden;
+}
+
+html {
+  background: url(frenchstucco/frenchstucco.png);
+}
+
 body {
+  margin: 0;
+  padding: 0;
   text-align: center;
   background-color: rgba(255, 193, 235, 0.25);
 }
@@ -27,6 +37,10 @@ button {
 
 .anonymous {
   font-style: italic;
+}
+
+#react-paginate {
+  margin-bottom: 60px;
 }
 
 #react-paginate ul {

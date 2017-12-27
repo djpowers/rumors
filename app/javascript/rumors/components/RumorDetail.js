@@ -12,7 +12,7 @@ class RumorDetail extends React.Component {
     } else if (isAnonymous) {
       submitter = <span className="anonymous">Anonymous</span>;
     } else {
-      submitter = this.props.submitter;
+      submitter = <span>{this.props.submitter}</span>;
     }
 
     return (
