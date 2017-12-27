@@ -4,9 +4,10 @@ class AddRumorForm extends React.Component {
   createRumor(event) {
     event.preventDefault();
     console.log('Ooh, a juicy one!');
+    const submitValue = this.submitter.value === '' ? null : this.submitter.value;
     const rumor = {
       body: this.body.value,
-      submitter: this.submitter.value,
+      submitter: submitValue,
     };
     this.props.addRumor(rumor);
     this.rumorForm.reset();
