@@ -58,7 +58,9 @@ class RumorsDisplay extends React.Component {
         const rumors = [...this.state.rumors];
         rumors.push(rumor);
         this.setState({ rumors });
-        this.handlePageClick({ selected: 0 });
+
+        const element = document.querySelector('[aria-label="Page 1"]') || document.querySelector('[aria-label="Page 1 is your current page"]');
+        element.click();
       })
       .catch((error) => {
         console.log(error);
