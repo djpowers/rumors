@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import ReactPaginate from 'react-paginate';
+import createHistory from 'history/createBrowserHistory';
 import AddRumorForm from './AddRumorForm';
 import RumorDetail from './RumorDetail';
 
@@ -9,7 +10,6 @@ class RumorsDisplay extends React.Component {
     super();
     this.state = {
       rumors: [],
-      offset: 1,
     };
     this.addRumor = this.addRumor.bind(this);
     this.handlePageClick = this.handlePageClick.bind(this);
@@ -24,9 +24,12 @@ class RumorsDisplay extends React.Component {
   }
 
   fetchRumors() {
-    axios.get(`api/rumors?page=${this.state.offset}&per_page=${this.props.perPage}`)
+    const query = new URLSearchParams(location.search);
+    const value = query.get('page') || 1; // default to first page if no query string parameter
+
+    axios.get(`api/rumors?page=${value}&per_page=${this.props.perPage}`)
       .then((response) => {
-        this.setState({ rumors: response.data.rumors, pageCount: response.data.totalCount / this.props.perPage });
+        this.setState({ rumors: response.data.rumors, pageCount: Math.ceil(response.data.totalCount / this.props.perPage) });
       })
       .catch((error) => {
         console.error(error);
@@ -66,9 +69,10 @@ class RumorsDisplay extends React.Component {
     const selected = data.selected + 1;
     const offset = selected;
 
-    this.setState({ offset }, () => {
-      this.fetchRumors();
-    });
+    const history = createHistory();
+    history.push(`/?page=${offset}`);
+
+    this.fetchRumors();
   }
 
   render() {
