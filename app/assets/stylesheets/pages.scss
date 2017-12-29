@@ -11,18 +11,30 @@ body {
   padding: 0;
   text-align: center;
   background-color: rgba(255, 193, 235, 0.25);
+  margin-bottom: 60px;
 }
 
 textarea {
   margin: 0 auto;
   display: block;
   margin-bottom: 10px;
-}
+ }
 
-button {
-  border: 1px solid #000;
-  border-radius: 4px;
-}
+ ::-webkit-input-placeholder {
+   text-align: center;
+ }
+
+ :-moz-placeholder { /* Firefox 18- */
+   text-align: center;
+ }
+
+ ::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;
+ }
+
+ :-ms-input-placeholder {
+   text-align: center;
+ }
 
 .rumorDetail {
   width: 60%;
@@ -39,10 +51,6 @@ button {
   font-style: italic;
 }
 
-#react-paginate {
-  margin-bottom: 60px;
-}
-
 #react-paginate ul {
     display: inline-block;
     padding-left: 15px;
@@ -51,8 +59,6 @@ button {
 
 #react-paginate li {
     display: inline-block;
-    background-color: lightgray;
-    margin: 5px;
 }
 
 #react-paginate .break a {
