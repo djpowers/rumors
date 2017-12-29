@@ -75,6 +75,7 @@ class RumorsDisplay extends React.Component {
     history.push(`/?page=${offset}`);
 
     this.fetchRumors();
+    window.scrollTo(0, 0);
   }
 
   render() {
