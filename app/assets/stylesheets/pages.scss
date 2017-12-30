@@ -1,0 +1,66 @@
+html, body {
+  overflow-x: hidden;
+}
+
+html {
+  background: url(frenchstucco/frenchstucco.png);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: rgba(255, 193, 235, 0.25);
+  margin-bottom: 60px;
+}
+
+textarea {
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 10px;
+ }
+
+ ::-webkit-input-placeholder {
+   text-align: center;
+ }
+
+ :-moz-placeholder { /* Firefox 18- */
+   text-align: center;
+ }
+
+ ::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;
+ }
+
+ :-ms-input-placeholder {
+   text-align: center;
+ }
+
+.rumorDetail {
+  width: 60%;
+  margin: 0 auto;
+  padding: 10px;
+  text-align: left;
+}
+
+.submitted {
+  font-weight: bold;
+}
+
+.anonymous {
+  font-style: italic;
+}
+
+#react-paginate ul {
+    display: inline-block;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#react-paginate li {
+    display: inline-block;
+}
+
+#react-paginate .break a {
+    cursor: default;
+}

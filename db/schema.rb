@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140706171613) do
+ActiveRecord::Schema.define(version: 20171227191855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "rumors", force: true do |t|
-    t.text     "body",                 null: false
-    t.string   "submitter"
-    t.integer  "tweet_id",   limit: 8
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "rumors", force: :cascade do |t|
+    t.text "body", null: false
+    t.string "submitter"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "tweet_id"
   end
 
 end
