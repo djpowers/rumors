@@ -41,6 +41,8 @@ GEM
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
+    auto_strip_attributes (2.2.0)
+      activerecord (>= 3.0)
     bindex (0.5.0)
     buftok (0.2.0)
     builder (3.2.3)
@@ -199,6 +201,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  auto_strip_attributes
   byebug
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)

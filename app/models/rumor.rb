@@ -1,5 +1,6 @@
 class Rumor < ApplicationRecord
   validates :body, presence: true, length: { minimum: 10 }
+  auto_strip_attributes :body, :submitter
 
   @client = Twitter::REST::Client.new do |config|
     config.consumer_key = ENV['YOUR_CONSUMER_KEY']
